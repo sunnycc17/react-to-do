@@ -26,7 +26,9 @@ const App = () => {
           />
         ))}
       </div>
-      <CardComponent />
+      <div data-aos="fade-up">
+        <CardComponent />
+      </div>
     </div>
   );
 };
