@@ -18,7 +18,7 @@ const App = () => {
     <div className="flex flex-col justify-center items-center min-h-screen">
       <div className="relative w-full h-full">
         {/* Generate 5 PetalComponent instances with random positions */}
-        {[...Array(5)].map((_, i) => (
+        {[...Array(7)].map((_, i) => (
           <PetalComponent
             key={i}
             left={`${Math.random() * 100}%`} // Random X-position (between 0% and 100%)

@@ -10,19 +10,20 @@ const PetalComponent: React.FC<PetalComponentProps> = ({ left, top }) => {
     <motion.img
       src="/react-to-do/camellia.png"
       alt="camellia flower"
-      className="absolute w-16 opacity-80"
-      style={{ left, top }} // Apply the left and top position dynamically
-      initial={{ y: 1000, x: 0, rotate: 0, opacity: 0 }} // Start from below the screen
+      className="absolute w-28 opacity-80"
+      style={{ left, top }}
+      initial={{ y: 1000, opacity: 0 }} // Start below screen
       animate={{
-        y: [1000, 0, -200], // Moves from bottom to top and slightly higher
-        x: [0, 30, -30, 0], // Slight swaying motion left to right (adjust for stronger sway)
-        rotate: [-10, 10, -10], // Gentle rotation for a wiggling effect
-        opacity: [0, 0.8, 1, 0], // Fade in at the middle of the animation and fade out at the end
+        y: [1000, -300], // Slow, smooth ascent
+        x: [0, 30, -30, 20, -20, 10, -10, 0], // Continuous wiggle
+        rotate: [-15, 10, -10, 5, -5, 0], // Smooth rotation
+        opacity: [0, 0.6, 1, 1, 0.8, 0], // Fade in & out naturally
       }}
       transition={{
-        duration: 5 + Math.random() * 3, // Randomize speed for a more natural flow
-        ease: "easeInOut",
-        repeat: Infinity, // Repeat the animation forever
+        duration: 8 + Math.random() * 5, // Slower, more natural rise
+        ease: [0.42, 0, 0.58, 1], // Smooth cubic bezier easing
+        repeat: Infinity,
+        repeatType: "mirror", // Makes it reverse smoothly
       }}
     />
   );
